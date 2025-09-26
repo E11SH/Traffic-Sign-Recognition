@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Sign Recognition 🚦</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Interactive Traffic Sign Recognition</h1>
+        <p>Upload a driving video (.mp4) to detect and classify German traffic signs in real-time.</p>
+    </header>
+
+    <main>
+        <div class="card" id="upload-card">
+            <h2>1. Upload Your Video</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="videoFile" name="videoFile" accept="video/mp4">
+                <label for="videoFile" class="file-label">Choose a .mp4 File</label>
+                <span id="file-name">No file selected</span>
+                <button type="submit">Process Video</button>
+            </form>
+            <div id="loader" class="loader" style="display: none;"></div>
+            <p id="status-text"></p>
+        </div>
+
+        <div class="card" id="results-card" style="display: none;">
+            <h2>2. Processed Video</h2>
+            <video id="processed-video" controls width="100%">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="card" id="analytics-card">
+            <h2>Model Performance Analytics</h2>
+            <p>Training and validation metrics from the CNN model over 15 epochs.</p>
+            <div class="chart-container">
+                <canvas id="accuracyChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="lossChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Powered by a Custom CNN Model & Developed By E11SH</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
