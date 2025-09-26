@@ -1,0 +1,17 @@
+traffic-sign-webapp/
+├── traffic_sign_cnn.h5
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   └── processed_videos/
+│       └── (processed videos will be saved here)
+├── templates/
+│   └── index.html
+├── uploads/
+│   └── (uploaded videos will be saved here)
+├── app.py
+├── model_loader.py
+├── requirements.txt
+└── video_processor.py
